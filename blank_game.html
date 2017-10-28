@@ -18,9 +18,9 @@
     //These three functions are required for phaser!
     //Preload loads everything your game needs - sprites, images, etc
     function preload() {
-        game.load.image('sky', 'assets/sky.png');
+        game.load.image('sky', 'assets/white.jpg');
         game.load.image('ground', 'assets/platform.png');
-        game.load.spritesheet('hp', 'assets/hpsprite.png', 32, 48);
+        game.load.spritesheet('hp', 'assets/yellowball2.png',100, 100);
 
     }
 
@@ -47,7 +47,7 @@
 
         //add player
         //the first 2 arguments are x and y, then the last is the key of your image
-        player = game.add.sprite(32, game.world.height - 150, 'hp');
+        player = game.add.sprite(32, game.world.height - 500, 'hp');
 
         //enable physics on player
         game.physics.arcade.enable(player);
@@ -55,8 +55,8 @@
         //give player gravity
         player.body.gravity.y = 300;
 
-        player.animations.add('left', [4, 5, 6, 7], 10, true);
-        player.animations.add('right', [8, 9, 10, 11], 10, true);
+        player.animations.add('left', [0], 10, true);
+        player.animations.add('right', [0], 10, true);
 
 
         //  Our controls.
