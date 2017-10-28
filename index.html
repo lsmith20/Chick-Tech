@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <!-- This is where we load JavaScript files that we need - here I'm loading phaser and bootstrap (a bunch of helpful classes
+    to make your websites look more modern and fancy!)-->
+    <meta charset="UTF-8" />
+    <title>ChickTech JavaScript</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/phaser.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!--loading our CSS file-->
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body> 
+<!--Build your about me page here!-->
+<h1> Lindsey! </h1>
+    <div class="row"> 
+    <div class="col-md-4">
+        <div> <img src="http://neurohealthchiro.com.au/wp-content/uploads/2016/09/Swim-Fast-1.jpg" height="300" width="500"> </div>
+        <p> I have been swimming for four years. I swim for Portland Aquatic Club.</p>
+    </div>
+    <div class="col-md-4">
+        <div> <img src="http://cdn1.bostonmagazine.com/wp-content/uploads/sites/2/2017/07/ice-cream-boston.jpg" height="300" width="500"> </div>
+        <p> I love ice cream. My favorite flavor is Half Baked from Ben&Jerrys.</p>
+    </div>
+    <div class="col-md-4">
+            <div> <img src="https://www.pps.net/cms/lib/OR01913224/Centricity/Domain/1484/WWHS_STD_LOGO_web.jpg" height="300" width="400"> </div>
+            <p> I am a sophomore at Wilson High School in SW Portland. </p>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class= "col-md-4 col-md-offset-5">
+             
+        <button> Click for Game</button>
+
+    </div>
+    </div>
+</div>
+
+
+
+<!--END HTML FOR ABOUT ME PAGE-->
+
+<!--Put any javascript here-->
+<script type="text/javascript">
+
+    //this opens a new window when you click the button with our game html! Since an entire URL is not specified,
+    //it opens relative to your current path - if you are on www.mywebsite.com/index.html, this would go to
+    //www.mywebsite.com/game.html
+    var onClick = function() {
+      window.open('/game.html');
+    };
+
+
+</script>
+
+</body>
+</html>
