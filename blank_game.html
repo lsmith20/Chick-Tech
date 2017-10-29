@@ -41,10 +41,6 @@
     //Create sets up your game for you - most of your code will probably be here!
     function create() {
 
-       
-
-
-
     
         //add the sky
         game.add.sprite(0, 0, 'sky');
@@ -100,17 +96,13 @@
         
     
         //create the timer
-        timer = game.time.create(false);
-        timer.add(gameTime*1000, timeUp, this);
+        timer = game.time.create();
 
         
         introText = game.add.text(game.world.centerX, 400, 'CLICK TO START', { font: "40px Arial", fill: "#ffffff", align: "center" });
         introText.anchor.setTo(0.5, 0.5);
 
         game.input.onDown.add(startGame, this);
-
-
-
 
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
@@ -119,9 +111,12 @@
    
 
     //  Allow the player to jump if they are touching the ground.
-        timer.loop(400,createcandy,hitbydiamond);
+        timer.loop(400, createcandy);
+        timer.loop(400, creatediamond);
 
+        countdownTimer = timer.loop(Phaser.Timer.SECOND, updateCountdown);
         
+        timer.add(gameTime*1000, timeUp, this);
 
     }
     
@@ -187,7 +182,6 @@
 
         
         //create a loop to update the countdown text, update every second and call updateCountdown
-        countdownTimer = timer.loop(Phaser.Timer.SECOND, updateCountdown);
         //add the timer event of game time * 1000 (since it is in milliseconds) and call timeUp when its done
         //start the timer event
         timer.start();
@@ -195,8 +189,8 @@
         scoreText.visible = true;
 
                 //create new snitches in a loop, every 400 milliseconds
-        timer.loop(400, createcandy);
-        timer.loop(400, creatediamond);
+
+
     }
 
 
@@ -236,10 +230,16 @@
     }
 
     function timeUp() {
+
+        console.log('times up!');
         //stop the loops
         timer.stop();
         //get rid of all the active snitches
         candys.forEach(function(element) {
+            element.kill();
+        });
+
+        diamonds.forEach(function(element) {
             element.kill();
         });
         //display time up message
